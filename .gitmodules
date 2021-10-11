@@ -1,0 +1,9 @@
+[submodule "submodules/CovidPassApiNet"]
+	path = submodules/CovidPassApiNet
+	url = git@github.com:billylo1/CovidPassApiNet.git
+[submodule "submodules/VaxVerify"]
+	path = submodules/VaxVerify
+	url = git@github.com:AnujanMath/VaxVerify.git
+[submodule "submodules/hit-counter"]
+	path = submodules/hit-counter
+	url = git@github.com:billylo1/hit-counter.git
