@@ -11,19 +11,29 @@ Here is a [demo](https://www.youtube.com/watch?v=AIrG5Qbjptg)
 * Select File, Browse, your-vaccine-receipt.pdf
 * Add to the wallet
 
-### Debug the web app
-
+### Debug in Docker Containers
+1. Update submodules (VaxVerify, hit-counter, CovidPassApiNet)
 ```sh
-yarn install
-yarn dev
+git submodule init
+git submodule update
 ```
 
-### Run the Docker container
-
+2. Run `firebase login:ci` to generate a token for the firebase emulator container. Sign in and then copy the generated token.
+3. create a file `.env.local` in `submodules/VaxVerify` and add a line for the env variable:
 ```sh
-docker build . -t covidpass
-docker run -t -i -p 3000:3000 covidpass
+FIREBASE_TOKEN=PASTE_TOKEN_HERE
 ```
+4. in the `covidpass` directory, run `yarn dev:up` or run `docker-compose -f docker-compose.yml -f docker-compose.dev.yml up` if you don't have yarn installed locally
+5. Port usage:
+
+| App      | Port |
+| ----------- | ----------- |
+| covidpass front end      | localhost:3000       |
+| firebase emulator ui   | localhost:4000        |
+| firebase functions   | localhost:5001       |
+| firestore   | localhost:5002        |
+| hitcounter      | localhost:8080       |
+6. Remember to delete containers, images, volumes once in a while
 
 ### Integration with other repos required
 
