@@ -1,0 +1,6 @@
+version: "3" #This denotes that we are using version 3 of Docker Compose
+
+services: #This section defines all the different containers we will create.
+  covidpass: #This is the name of our Nextjs application.
+      env_file: .env.production
+      command: start #command to execute

@@ -1,0 +1,37 @@
+version: "3"
+
+services: #This section defines all the different containers we will create.
+  covidpass: #This is the name of our Nextjs application.
+      command: dev #command to execute
+      # restart: unless-stopped
+      env_file: .env.local
+      volumes:
+        - .:/usr/src/app
+        - /usr/src/app/node_modules
+        - /usr/src/app/.next
+      depends_on:
+        - "verifier"
+      networks:
+        - app-network
+
+  verifier:
+      build:
+        context: ./submodules/VaxVerify #This specifies the location of our Dockerfile
+        dockerfile: Dockerfile
+      image: firebase-emulator:verifier
+      env_file: ./submodules/VaxVerify/.env.local
+      volumes:
+        - ./submodules/VaxVerify:/usr/src/app
+        - /usr/src/app/node_modules
+        - /usr/src/app/functions/node_modules
+      container_name: verifier
+      ports: #This is used to map the container’s ports to the host machine.
+        - "5003:5003"
+        - "5001:5001"
+        - "4000:4000"
+      networks:
+        - app-network
+
+networks:
+  app-network:
+    driver: bridge
