@@ -11,6 +11,7 @@ services: #This section defines all the different containers we will create.
         - /usr/src/app/.next
       depends_on:
         - "verifier"
+        - "hitcounter"
       networks:
         - app-network
 
@@ -29,9 +30,35 @@ services: #This section defines all the different containers we will create.
         - "5003:5003"
         - "5001:5001"
         - "4000:4000"
+        - "5002:5002"
+      networks:
+        - app-network
+
+  hitcounter:
+      build:
+        context: ./submodules/hit-counter #This specifies the location of our Dockerfile
+        dockerfile: Dockerfile
+      image: hitcounter:hitcounter
+      volumes:
+        - ./submodules/hit-counter:/usr/src/app
+      container_name: hitcounter
+      ports: #This is used to map the container’s ports to the host machine.
         - "8080:8080"
       networks:
         - app-network
+
+  # covidpass:
+  #     build:
+  #       context: ./submodules/CovidPassApiNet #This specifies the location of our Dockerfile
+  #       dockerfile: Dockerfile
+  #     image: covidpass:covidpass
+  #     volumes:
+  #       - ./submodules/CovidPassApiNet:/usr/src/app
+  #     container_name: covidpass
+  #     ports: #This is used to map the container’s ports to the host machine.
+  #       - "80:80"
+  #     networks:
+  #       - app-network
 
 networks:
   app-network:
