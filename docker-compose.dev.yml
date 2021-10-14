@@ -1,14 +1,15 @@
 version: "3"
 
 services: #This section defines all the different containers we will create.
-  covidpass: #This is the name of our Nextjs application.
+  covidpass: 
       command: dev #command to execute
       # restart: unless-stopped
       env_file: .env.local
+      user: root
       volumes:
-        - .:/usr/src/app
-        - /usr/src/app/node_modules
-        - /usr/src/app/.next
+        - .:/app
+        - /app/node_modules
+        - /app/.next
       depends_on:
         - "verifier"
         - "hitcounter"
@@ -36,13 +37,13 @@ services: #This section defines all the different containers we will create.
 
   hitcounter:
       build:
-        context: ./submodules/hit-counter #This specifies the location of our Dockerfile
+        context: ./submodules/hit-counter
         dockerfile: Dockerfile
       image: hitcounter:hitcounter
       volumes:
         - ./submodules/hit-counter:/usr/src/app
       container_name: hitcounter
-      ports: #This is used to map the container’s ports to the host machine.
+      ports:
         - "8080:8080"
       networks:
         - app-network
