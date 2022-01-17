@@ -558,7 +558,7 @@ function Form(): JSX.Element {
         }
 
         if (isAndroid) {
-            if (Number(osVersion) > 8) {
+            if (Number(osVersion.split('.')[0]) >= 8) {
                 setIsDisabledGooglePay(false);
             } else {
                 setAddErrorMessage('androidVersionError')
