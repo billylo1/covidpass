@@ -78,10 +78,9 @@ export async function decodedStringToReceipt(decoded: object) : Promise<SHCRecei
         // new codes for booster shots
         '300': 'PFIZER BIVALENT BOOSTER (PRE-FDA)',
         '301': 'PFIZER BIVALENT BOOSTER',
+        '309': 'PFIZER BIVALENT BOOSTER',
         '229': 'MODERNA BIVALENT BOOSTER',
         '228': 'MODERNA YOUTH',
-
-
     }
 
     // Track whether the SHC code is validated - if it is not, we will record it so that we can
