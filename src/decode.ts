@@ -78,7 +78,7 @@ export async function decodedStringToReceipt(decoded: object) : Promise<SHCRecei
         // new codes for booster shots
         '300': 'PFIZER BIVALENT BOOSTER (PRE-FDA)',
         '301': 'PFIZER BIVALENT BOOSTER',
-        '309': 'PFIZER BIVALENT BOOSTER',
+        '309': 'PFIZER XBB.1.5 BOOSTER',
         '229': 'MODERNA BIVALENT BOOSTER',
         '228': 'MODERNA YOUTH',
     }
