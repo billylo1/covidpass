@@ -67,8 +67,6 @@ export async function decodedStringToReceipt(decoded: object) : Promise<SHCRecei
         // All of the vaccines below are listed as CVX codes, but we haven't seen them yet in our data - adding for completeness
         '501': 'QAZCOVID-IN',
         '503': 'COVIVAC',
-        // '500': 'UNKNOWN',
-        '500': 'MODERNA BIVALENT',
         '213': 'UNKNOWN',
         '509': 'EPIVACCORONA',
         '508': 'CHOCELL',
@@ -76,7 +74,8 @@ export async function decodedStringToReceipt(decoded: object) : Promise<SHCRecei
         '504': 'SPUTNIK LIGHT',
 
         // new codes for booster shots
-        '300': 'PFIZER BIVALENT BOOSTER (PRE-FDA)',
+        '500': 'MODERNA BA.1 BIVALENT',
+        '300': 'PFIZER BA.4/5 BIVALENT',
         '301': 'PFIZER BIVALENT BOOSTER',
         '309': 'PFIZER XBB.1.5',
         '229': 'MODERNA BIVALENT BOOSTER',
