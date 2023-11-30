@@ -74,7 +74,6 @@ export async function decodedStringToReceipt(decoded: object) : Promise<SHCRecei
         '504': 'SPUTNIK LIGHT',
 
         // new codes for booster shots
-        '500': 'UNKNOWN',
         '519': 'MODERNA BA.1 BIVALENT',
         '300': 'PFIZER BA.4/5 BIVALENT',
         '301': 'PFIZER BA.4/5 YOUTH',
