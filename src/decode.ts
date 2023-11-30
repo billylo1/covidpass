@@ -77,11 +77,18 @@ export async function decodedStringToReceipt(decoded: object) : Promise<SHCRecei
         '500': 'MODERNA BA.1 BIVALENT',
         '519': 'MODERNA BA.1 BIVALENT',
         '300': 'PFIZER BA.4/5 BIVALENT',
-        '301': 'PFIZER BA.4/5 BIVALENT',
+        '301': 'PFIZER BA.4/5 YOUTH',
+        '302': 'PFIZER BA.4/5 PEDIATRIC',
+        '308': 'PFIZER XBB.1.5 PEDIATRIC',
         '309': 'PFIZER XBB.1.5',
+        '310': 'PFIZER XBB.1.5 YOUTH',
+        '311': 'MODERNA XBB.1.5 YOUTH',
         '312': 'MODERNA XBB.1.5',
-        '229': 'MODERNA BA.4/5 BIVALENT',
-        '228': 'MODERNA YOUTH',
+        '229': 'MODERNA BA.4/5 BIVALENT', 
+        '230': 'MODERNA BA.4/5 YOUTH', 
+        '227': 'MODERNA PEDIATRIC',
+        '228': 'MODERNA PEDIATRIC',
+        '313': 'NOVAVAX XBB.1.5',
     }
 
     // Track whether the SHC code is validated - if it is not, we will record it so that we can
