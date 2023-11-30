@@ -77,10 +77,10 @@ export async function decodedStringToReceipt(decoded: object) : Promise<SHCRecei
         '500': 'MODERNA BA.1 BIVALENT',
         '519': 'MODERNA BA.1 BIVALENT',
         '300': 'PFIZER BA.4/5 BIVALENT',
-        '301': 'PFIZER BIVALENT BOOSTER',
+        '301': 'PFIZER BA.4/5 BIVALENT',
         '309': 'PFIZER XBB.1.5',
         '312': 'MODERNA XBB.1.5',
-        '229': 'MODERNA BIVALENT BOOSTER',
+        '229': 'MODERNA BA.4/5 BIVALENT',
         '228': 'MODERNA YOUTH',
     }
 
