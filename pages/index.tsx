@@ -109,16 +109,14 @@ function Index(): JSX.Element {
                                 <div className="region-card">Virginia</div>
                             </div> */}
                             <b>{displayPassCount}</b><br/><br/>
+                            Dec 3, 2023 update:
+                            <br />
+                            <br />
+                            Extended support for new vaccines such as XBB 1.5
                             Nov 18, 2022 update:
                             <br />
                             <br />
                             We managed to correct the error (No SHC code found for AB, BC, QC and Canadian Forces users).
-                            <br />
-                            <br />
-                            Oct 21, 2022 update:
-                            <br />
-                            <br />
-                            Moderna Bivalent Booster is now decoded correctly (no longer shown as UNKNOWN).
                             <br />
                             <br />
                             <p>{t('common:continueSpirit')}</p>

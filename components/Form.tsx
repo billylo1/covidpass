@@ -530,10 +530,12 @@ function Form(): JSX.Element {
         //     setIsDisabledAppleWallet(true);
         // }
         
-        const uaIsiOS15 = getUA.includes('15_');
-        const uaIsiOS16 = getUA.includes('16_');
+        // const uaIsiOS15 = getUA.includes('15_');
+        // const uaIsiOS16 = getUA.includes('16_');
+        const versionNumber = parseInt(osVersion.split('.')[0]);
+        const usVersion = parseInt(getUA.split('_')[0]);
 
-        if (isIOS && ((!osVersion.startsWith('15') && (!osVersion.startsWith('16')) && !uaIsiOS15 && !uaIsiOS16))) {
+        if (isIOS && (versionNumber < 15 || usVersion < 15)) {
             const message = `Not iOS15+ error: osVersion=${osVersion} UA=${getUA}`;
             console.warn(message);
             Sentry.captureMessage(message);
