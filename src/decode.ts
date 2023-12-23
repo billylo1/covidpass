@@ -67,8 +67,6 @@ export async function decodedStringToReceipt(decoded: object) : Promise<SHCRecei
         // All of the vaccines below are listed as CVX codes, but we haven't seen them yet in our data - adding for completeness
         '501': 'QAZCOVID-IN',
         '503': 'COVIVAC',
-        // '500': 'UNKNOWN',
-        '500': 'MODERNA BIVALENT',
         '213': 'UNKNOWN',
         '509': 'EPIVACCORONA',
         '508': 'CHOCELL',
@@ -76,11 +74,20 @@ export async function decodedStringToReceipt(decoded: object) : Promise<SHCRecei
         '504': 'SPUTNIK LIGHT',
 
         // new codes for booster shots
-        '300': 'PFIZER BIVALENT BOOSTER (PRE-FDA)',
-        '301': 'PFIZER BIVALENT BOOSTER',
-        '309': 'PFIZER XBB.1.5 BOOSTER',
-        '229': 'MODERNA BIVALENT BOOSTER',
-        '228': 'MODERNA YOUTH',
+        '519': 'MODERNA BA.1 BIVALENT',
+        '300': 'PFIZER BA.4/5 BIVALENT',
+        '301': 'PFIZER BA.4/5 YOUTH',
+        '302': 'PFIZER BA.4/5 PEDIATRIC',
+        '308': 'PFIZER XBB.1.5 PEDIATRIC',
+        '309': 'PFIZER XBB.1.5',
+        '310': 'PFIZER XBB.1.5 YOUTH',
+        '311': 'MODERNA XBB.1.5 YOUTH',
+        '312': 'MODERNA XBB.1.5',
+        '229': 'MODERNA BA.4/5 BIVALENT', 
+        '230': 'MODERNA BA.4/5 YOUTH', 
+        '227': 'MODERNA PEDIATRIC',
+        '228': 'MODERNA PEDIATRIC',
+        '313': 'NOVAVAX XBB.1.5',
     }
 
     // Track whether the SHC code is validated - if it is not, we will record it so that we can
